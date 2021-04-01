@@ -27,7 +27,7 @@ jiedian = {'省客响': '广东公司-云计算和客户响应中心-家宽服�
            '珠海': '广东公司-珠海分公司-客户响应中心-集团专线服务支撑室'}
 
 path = input("请输入源文件路径：")  # 获取源文件路径
-jk = read_csv(path, encoding="gbk")  # 读取源文件
+jk = read_csv(path, encoding="gb18030")  # 读取源文件
 jk = jk[jk['业务保障等级'].str.contains('AAA')]  # 筛选出业务保障等级为AAA的工单
 zhongduan = jk[jk['事件对业务的影响'].str.contains('集客业务可能中断')]  # 事件对业务的影响为'集客业务可能中断'的工单放到'zhongduan'表中
 danbian = jk[jk['事件对业务的影响'].str.contains('集客业务主用或备用路径中断')]  # 事件对业务的影响为'集客业务主用或备用路径中断'的工单放到'danbian'表中
